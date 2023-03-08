@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "my-rg" {
 }
 
 resource "azurerm_container_registry" "my-acr" {
-  name                = "my-registry"
+  name                = "msdevgrazregistry"
   sku                 = "Premium"
   resource_group_name = azurerm_resource_group.my-rg.name
   location            = azurerm_resource_group.my-rg.location
@@ -14,7 +14,7 @@ resource "azurerm_kubernetes_cluster" "my-k8s-cluster" {
   name                = var.kubernetes_cluster_name
   location            = azurerm_resource_group.my-rg.location
   resource_group_name = azurerm_resource_group.my-rg.name
-  dns_prefix          = "my.domain.prefix"
+  dns_prefix          = "my-dns-prefix"
 
   default_node_pool {
     name       = "default"
