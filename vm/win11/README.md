@@ -3,8 +3,8 @@
 Provisioning an Windows Virtual Machine using Terraform
 
 Prerequisites:
- - (Azure CLI)[https://learn.microsoft.com/en-us/cli/azure/install-azure-cli]
- - (Terraform)[https://developer.hashicorp.com/terraform/downloads]
+ - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+ - [Terraform](https://developer.hashicorp.com/terraform/downloads)
 
 ## Login to your Azure Subscription with Azure CLI
 
