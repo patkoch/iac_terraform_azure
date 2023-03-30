@@ -1,38 +1,40 @@
-# Get started
+# 1. Introduction
 
-Provisioning an Windows Virtual Machine using Terraform
+This is intended for those who would like to provision a Windows 11 Virtual Machine using Terraform.
 
-Prerequisites:
+# 2. Prerequisites:
  - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
  - [Terraform](https://developer.hashicorp.com/terraform/downloads)
  - [Git (for Windows)](https://gitforwindows.org/)
 
-## Login to your Azure Subscription with Azure CLI
+# 3. Preparing the environment
 
-At first, login to your Azure subscription by opening e.g.: a PowerShell prompt and conduct following command:
+## 3.1 Login to your Azure Subscription with Azure CLI
+
+At first, login to your Azure subscription by opening e.g.: a PowerShell prompt or opening a Terminal in Visual Studio Code and run:
 
 ```
 az login
 ```
 
-A browser session will be opened, simply enter the credentials for your account.
-Ensure, that the desired subscription is properly set by applying following:
+A browser session will be opened, enter the credentials for your account.
+Ensure, that the desired subscription is properly set by applying:
 
 ```
 az account show
 ```
 
-## Clone this repository
+## 3.2 Clone this repository
 
-Clone this repository by 
+Clone this repository by running following git command:
 
 ```
-git clone https://github.com/patkoch/iac_terraform_azure.git"
+git clone https://github.com/patkoch/iac_terraform_azure.git
 ```
 
-After cloning the repository, switch to the directory "iac_terraform_azure/vm/win10-sg"
+After cloning it, switch to the directory "iac_terraform_azure/vm/win11"
 
-# Provisioning and destroying the resources with Terraform
+# 4. Provisioning and destroying the resources with Terraform
 
 ## Creating the Windows 11 Virtual Machine with Terraform
 
