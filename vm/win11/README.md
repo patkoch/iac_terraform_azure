@@ -2,7 +2,7 @@
 
 This is intended for those who would like to provision a Windows 11 Virtual Machine using Terraform.
 
-# 2. Prerequisites:
+# 2. Prerequisites
  - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
  - [Terraform](https://developer.hashicorp.com/terraform/downloads)
  - [Git (for Windows)](https://gitforwindows.org/)
@@ -17,12 +17,17 @@ At first, login to your Azure subscription by opening e.g.: a PowerShell prompt 
 az login
 ```
 
+![alt text](pictures/00_az-login.png)
+
 A browser session will be opened, enter the credentials for your account.
 Ensure, that the desired subscription is properly set by applying:
 
 ```
 az account show
 ```
+In the output you should see your subscription of choice. In my case, I'm using my Visual Studio subscription:
+
+![alt text](pictures/01_az-account-show.png)
 
 ## 3.2 Clone this repository
 
