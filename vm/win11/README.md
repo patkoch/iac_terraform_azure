@@ -1,6 +1,6 @@
 # 1. Introduction
 
-This is intended for those who would like to provision a Windows 11 Virtual Machine using Terraform.
+This is intended for those, who would like to provision a Windows 11 Virtual Machine using Terraform.
 
 # 2. Prerequisites
  - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
@@ -11,7 +11,7 @@ This is intended for those who would like to provision a Windows 11 Virtual Mach
 
 ## 3.1 Login to your Azure Subscription with Azure CLI
 
-At first, login to your Azure subscription by opening e.g.: a PowerShell prompt or opening a Terminal in Visual Studio Code and run:
+First, login to your Azure subscription by opening e.g.: a PowerShell prompt or opening a Terminal in Visual Studio Code and run:
 
 ```
 az login
@@ -25,13 +25,13 @@ Ensure, that the desired subscription is properly set by applying:
 ```
 az account show
 ```
-In the output you should see your subscription of choice. In my case, I'm using my Visual Studio subscription:
+In the output, you should see your subscription of choice. In my case, I'm using my Visual Studio subscription:
 
 ![alt text](pictures/01_az-account-show.png)
 
 ## 3.2 Clone this repository
 
-Clone this repository by running following git command:
+Clone this repository by running the following git command:
 
 ```
 git clone https://github.com/patkoch/iac_terraform_azure.git
@@ -43,7 +43,7 @@ After cloning it, switch to the directory "iac_terraform_azure/vm/win11"
 
 ## Storing the Terraform State File in Azure
 
-This configuration stores the Terraform State File in Azure, this is defined in the file "providers.tf" by following block:
+This configuration stores the Terraform State File in Azure - defined in the file "providers.tf" - by the following block:
 
 ```
   backend "azurerm" {
@@ -54,20 +54,21 @@ This configuration stores the Terraform State File in Azure, this is defined in 
   }
 ```
 
-This refers to a Storage Account (named "alien39"), including a Container which finally contains the Terraform State File.
+This refers to a Storage Account (named "alien39"), including a Container that finally contains the Terraform State File.
 
 ![alt text](pictures/09_storage_account.png)
 
-This means, that this Storage Account is mandatory for this configuration. 
+This means, that the Storage Account is mandatory for this configuration.
 
 So, there are two options:
 
- - 1. Create a Storage Account with a name of your choice (don't forget to update the block in "providers.tf"), including a Container as storage for the Terraform State File 
- - 2. Deleter the block, shown in the snippet above, in that case the Terraform State File won't get stored in Azure, but locally. 
+1. Create a Storage Account with a name of your choice (don't forget to update the block in "providers.tf"), including a container as storage for the Terraform State File 
+2. Delete the block, shown in the snippet above, in that case, the Terraform State File won't get stored in Azure, but locally.
+
 
 ## Creating the Windows 11 Virtual Machine with Terraform
 
-Conduct the initialization with following command:
+Conduct the initialization with the following command:
 
 ```
 terraform init
@@ -86,14 +87,14 @@ terraform validate
 
 This validates the configuration file. The desired output can be seen in the picture above.
 
-Formate your Terraform configuration by using:
+Make sure your Terraform configuration files are in the desired format, by using:
 
 ```
 terraform fmt
 ```
 
-This takes care, that your files are formated properly. It will e.g. correct the shifting of your resource blocks.
-If e.g. a resource block was shifted, then the command returns the name of the file, which contains the resource block.
+This takes care, that your files are formatted correctly. It will e.g. correct the shifting of your resource blocks.
+If for example an adaption was made, then the command returns the name of the file, which was affected.
 
 E.g.:
 
@@ -107,7 +108,7 @@ terraform plan -out tfplan
 
 ![alt text](pictures/05_terraform_plan.png)
 
-This creates the file "tfplan". If the resources are getting created for the very first time, then the following command would be:
+This creates the file "tfplan". If the resources are getting created for the very first time, then the final command for starting the provisioning would be:
 
 ```
 terraform apply tfplan
@@ -119,18 +120,18 @@ This provisions a Windows 11 virtual machine in your *Azure* subscription by add
 
 ![alt text](pictures/06_terraform_apply-complete.png)
 
-Finally, the virtual machine is ready to use and is capable to be accessed with a remote desktop connection:
+Finally, the virtual machine is ready to use and it is capable to be accessed with a remote desktop connection:
 
 ![alt text](pictures/07_azure_portal_vm.png)
 
 Note:
-Assume, the resources are already created and you would run following command again:
+Assume, the resources are already created and you would run the following command a second time:
 
 ```
 terraform plan -out tfplan
 ```
 
-In that case you would get notified, that there are no changes:
+In that case you would get notified, that there are no changes, as seen in the picture below:
 
 ![alt text](pictures/08_terraform_plan_vm_exitsts_already.png)
 
