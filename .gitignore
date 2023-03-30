@@ -1,3 +1,14 @@
+*.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+vm/win11/tfplan
+aks/linux/azure-meetup-demo/.terraform/*
+aks/linux/azure-meetup-demo/.infracost/*
+/aks/windows/.terraform/*
+/aks/windows/.infracost/*
+vm/win11/.terraform/*
+vm/win10-20h1/.infracost/*
+vm/win10-sg/.terraform/*
 /consoleapps/az-workshop-consoleapp/consoleapp-windows/bin/*
 /consoleapps/az-workshop-consoleapp/consoleapp-windows/obj/*
 /consoleapps/az-workshop-consoleapp/consoleapp-windows/Properties/*
