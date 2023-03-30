@@ -93,6 +93,8 @@ terraform apply tfplan
 
 This provisions a Windows 11 virtual machine in your *Azure* subscription.
 
+![alt text](pictures/07_azure_portal_vm.png)
+
 Note:
 Assume, the resources are already created and you would run following command again:
 
