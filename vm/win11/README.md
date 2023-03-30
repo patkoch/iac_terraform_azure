@@ -91,7 +91,11 @@ terraform apply tfplan
 
 ![alt text](pictures/06_terraform_apply.png)
 
-This provisions a Windows 11 virtual machine in your *Azure* subscription.
+This provisions a Windows 11 virtual machine in your *Azure* subscription by adding 9 resources:
+
+![alt text](pictures/06_terraform_apply-complete.png)
+
+Finally, the virtual machine is ready to use and is capable to be accessed with a remote desktop connection:
 
 ![alt text](pictures/07_azure_portal_vm.png)
 
@@ -102,7 +106,9 @@ Assume, the resources are already created and you would run following command ag
 terraform plan -out tfplan
 ```
 
-In that case you would get notified, that there are no changes.
+In that case you would get notified, that there are no changes:
+
+![alt text](pictures/08_terraform_plan_vm_exitsts_already.png)
 
 
 # References
