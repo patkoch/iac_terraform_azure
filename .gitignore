@@ -9,6 +9,8 @@ aks/linux/azure-meetup-demo/.infracost/*
 vm/win11/.terraform/*
 vm/win10-20h1/.infracost/*
 vm/win10-sg/.terraform/*
+storage/.infracost/*
+storage/.terraform/*
 /consoleapps/az-workshop-consoleapp/consoleapp-windows/bin/*
 /consoleapps/az-workshop-consoleapp/consoleapp-windows/obj/*
 /consoleapps/az-workshop-consoleapp/consoleapp-windows/Properties/*
