@@ -48,6 +48,7 @@ Conduct the initialization with following command:
 ```
 terraform init
 ```
+![alt text](pictures/02_terraform_init.png)
 
 This will establish a connection to the backend.
 
@@ -57,7 +58,9 @@ After that, run:
 terraform validate
 ```
 
-This validates the configuration file.
+![alt text](pictures/03_terraform_validate.png)
+
+This validates the configuration file. The desired output can be seen in the picture above.
 
 Formate your Terraform configuration by using:
 
@@ -66,7 +69,11 @@ terraform fmt
 ```
 
 This takes care, that your files are formated properly. It will e.g. correct the shifting of your resource blocks.
-If e.g. a resource block was shifted, than the command returns the name of the file, which contained the resource block.
+If e.g. a resource block was shifted, then the command returns the name of the file, which contains the resource block.
+
+E.g.:
+
+![alt text](pictures/04_terraform_fmt.png)
 
 Create a Terraform plan by running:
 
