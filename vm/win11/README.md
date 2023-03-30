@@ -36,7 +36,7 @@ After cloning the repository, switch to the directory "iac_terraform_azure/vm/wi
 
 ## Creating the Windows 11 Virtual Machine with Terraform
 
-Conduct the initialization with:
+Conduct the initialization with following command:
 
 ```
 terraform init
@@ -52,10 +52,38 @@ terraform validate
 
 This validates the configuration file.
 
-Finally, for creating the Virtual Machine, run following command:
+Formate your Terraform configuration by using:
 
 ```
-terraform apply -auto-approve
+terraform fmt
 ```
 
+This takes care, that your files are formated properly. It will e.g. correct the shifting of your resource blocks.
+If e.g. a resource block was shifted, than the command returns the name of the file, which contained the resource block.
+
+Create a Terraform plan by running:
+
+```
+terraform plan -out tfplan
+```
+
+This creates the file "tfplan". If the resources are getting created for the very first time, then the following command would be:
+
+```
+terraform apply tfplan
+```
 This provisions a Windows Virtual Machine in your *Azure* subscription.
+
+Note:
+Assume, the resources are already created and you would run following command again:
+
+```
+terraform plan -out tfplan
+```
+
+In that case you would get notified, that there are no changes.
+
+
+# References
+
+[HashiCorp: Tutorials - Get Started - Azure](https://developer.hashicorp.com/terraform/tutorials/azure-get-started)
