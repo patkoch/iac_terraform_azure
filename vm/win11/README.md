@@ -41,6 +41,30 @@ After cloning it, switch to the directory "iac_terraform_azure/vm/win11"
 
 # 4. Provisioning and destroying the resources with Terraform
 
+## Storing the Terraform State File in Azure
+
+This configuration stores the Terraform State File in Azure, this is defined in the file "providers.tf" by following block:
+
+```
+  backend "azurerm" {
+    resource_group_name  = "devopsexperiences-storage"
+    storage_account_name = "alien39"
+    container_name       = "terraformstate"
+    key                  = "terraform.tfstate"
+  }
+```
+
+This refers to a Storage Account (named "alien39"), including a Container which finally contains the Terraform State File.
+
+![alt text](pictures/09_storage_account.png)
+
+This means, that this Storage Account is mandatory for this configuration. 
+
+So, there are two options:
+
+ - 1. Create a Storage Account with a name of your choice (don't forget to update the block in "providers.tf"), including a Container as storage for the Terraform State File 
+ - 2. Deleter the block, shown in the snippet above, in that case the Terraform State File won't get stored in Azure, but locally. 
+
 ## Creating the Windows 11 Virtual Machine with Terraform
 
 Conduct the initialization with following command:
