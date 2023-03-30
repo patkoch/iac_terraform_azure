@@ -81,12 +81,17 @@ Create a Terraform plan by running:
 terraform plan -out tfplan
 ```
 
+![alt text](pictures/05_terraform_plan.png)
+
 This creates the file "tfplan". If the resources are getting created for the very first time, then the following command would be:
 
 ```
 terraform apply tfplan
 ```
-This provisions a Windows Virtual Machine in your *Azure* subscription.
+
+![alt text](pictures/06_terraform_apply.png)
+
+This provisions a Windows 11 virtual machine in your *Azure* subscription.
 
 Note:
 Assume, the resources are already created and you would run following command again:
