@@ -11,7 +11,7 @@ This is intended for those, who would like to provision a Windows 11 Virtual Mac
 
 ## 3.1 Login to your Azure Subscription with Azure CLI
 
-First, login to your Azure subscription by opening e.g.: a PowerShell prompt or opening a Terminal in Visual Studio Code and run:
+First, log in to your Azure subscription by opening e.g.: a PowerShell prompt or opening a Terminal in Visual Studio Code and run:
 
 ``` powershell
 az login
