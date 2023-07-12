@@ -71,6 +71,8 @@ Verify after a few minutes that the virtual machines are deployed:
 
 ## 5. Destroy the resources
 
+Use the following command to delete all provisioned resources again:
+
 ``` powershell
 terraform destroy
 ```
