@@ -17,7 +17,11 @@ https://www.patrickkoch.dev/posts/post_31/
 
 # 3. Get suggestions from GitHub Copilot and create the Terrafrom configuration file
 
-![alt text](pictures/github_copilot_aks_terraform_01.png width="60%" height="30%")
+<p align="center">
+  <img src="pictures/github_copilot_aks_terraform_01.png" width="60%" height="30%" title="github copilot extension">
+</p>
+
+![github copilot extension](pictures/github_copilot_aks_terraform_01.png)
 ![alt text](pictures/github_copilot_aks_terraform_04.png)
 ![alt text](pictures/github_copilot_aks_terraform_06.png)
 
