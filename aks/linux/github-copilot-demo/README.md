@@ -1,6 +1,6 @@
 # 1. Introduction
 
-This example of a Terraform configuration file shows, which comments I have used for getting suggestions from the GitHub Copilot.
+This example of a Terraform configuration file shows, which dedicated comments I have used for getting suggestions from the GitHub Copilot.
 The goal was to create a final configuration file, which allows to deploy a Kubernetes cluster and an attached Container Registry on Azure.
 
 For a more detailed manual please see the related blog post:
@@ -17,7 +17,7 @@ https://www.patrickkoch.dev/posts/post_31/
 
 # 3. Get suggestions from GitHub Copilot and create the Terrafrom configuration file
 
-![alt text](pictures/github_copilot_aks_terraform_01.png)
+![alt text](pictures/github_copilot_aks_terraform_01.png width="60%" height="30%")
 ![alt text](pictures/github_copilot_aks_terraform_04.png)
 ![alt text](pictures/github_copilot_aks_terraform_06.png)
 
