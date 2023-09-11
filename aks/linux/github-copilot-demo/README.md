@@ -21,10 +21,13 @@ https://www.patrickkoch.dev/posts/post_31/
   <img src="pictures/github_copilot_aks_terraform_01.png" width="60%" height="30%" title="github copilot extension">
 </p>
 
-![github copilot extension](pictures/github_copilot_aks_terraform_01.png)
-![alt text](pictures/github_copilot_aks_terraform_04.png)
-![alt text](pictures/github_copilot_aks_terraform_06.png)
+<p align="center">
+  <img src="pictures/github_copilot_aks_terraform_04.png" width="60%" height="30%" title="suggestion for Terraform block">
+</p>
 
+<p align="center">
+  <img src="pictures/github_copilot_aks_terraform_06.png" width="60%" height="30%" title="suggestion for Terraform block">
+</p>
 
 
 ``` powershell
