@@ -22,13 +22,24 @@ https://www.patrickkoch.dev/posts/post_31/
 </p>
 
 <p align="center">
-  <img src="pictures/github_copilot_aks_terraform_04.png" width="60%" height="30%" title="suggestion for Terraform block">
+  <img src="pictures/github_copilot_aks_terraform_04.png" width="50%" height="20%" title="suggestion for Terraform block">
 </p>
 
 <p align="center">
-  <img src="pictures/github_copilot_aks_terraform_06.png" width="60%" height="30%" title="suggestion for Terraform block">
+  <img src="pictures/github_copilot_aks_terraform_06.png" width="50%" height="20%" title="suggestion for Terraform block">
 </p>
 
+<p align="center">
+  <img src="pictures/github_copilot_aks_terraform_11.png" width="60%" height="30%" title="applying the config">
+</p>
+
+<p align="center">
+  <img src="pictures/github_copilot_aks_terraform_12.png" width="60%" height="30%" title="created resource">
+</p>
+
+<p align="center">
+  <img src="pictures/github_copilot_aks_terraform_13.png" width="60%" height="30%" title="created resource">
+</p>
 
 ``` powershell
 terraform validate
