@@ -3,7 +3,7 @@ on: [push]
 name: ProvisionKubernetesClusterOnAzure
 
 jobs:
-  build-and-deploy:
+  deploy-kubernetes-cluster:
     runs-on: ubuntu-latest
     steps:
       - name: Install az
@@ -22,9 +22,23 @@ jobs:
           sudo tee /etc/apt/sources.list.d/hashicorp.list
           sudo apt update
           sudo apt-get install terraform
+      - name: Install Git
+        run: |
+          sudo apt-get update
+          sudo apt-get install git
+      - name: Verify installation of Git
+        run: git --version
       - name: Get az version
         run: az --version
       - name: Log in with Azure
         uses: azure/login@v1
         with:
           creds: '${{ secrets.AZURE_SUBSCRIPTION_AZUREWORKSHOP }}'
+      - name: Clone the repository
+        run: |
+          git clone https://github.com/patkoch/iac_terraform_azure.git
+      - name: Conduct Terraform init
+        run: |
+          cd iac_terraform_azure/aks/linux/github-actions-demo
+          ls -l
+        
