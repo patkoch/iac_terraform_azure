@@ -1,0 +1,52 @@
+on:
+    workflow_dispatch:
+
+name: DestroyKubernetesClusterOnAzure
+
+jobs:
+  deploy-kubernetes-cluster:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install az
+        run: |
+          sudo apt-get update
+          sudo apt-get install curl 
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      - name: Install terraform
+        run: |
+          sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+          wget -O- https://apt.releases.hashicorp.com/gpg | \
+          gpg --dearmor | \
+          sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+          https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
+          sudo tee /etc/apt/sources.list.d/hashicorp.list
+          sudo apt update
+          sudo apt-get install terraform
+      - name: Install Git
+        run: |
+          sudo apt-get update
+          sudo apt-get install git
+      - name: Verify installation of Git
+        run: git --version
+      - name: Get az version
+        run: az --version
+      - name: Log in with Azure
+        uses: azure/login@v1
+        with:
+          creds: '${{ secrets.AZURE_SUBSCRIPTION_AZUREWORKSHOP }}'
+      - name: Clone the repository
+        run: |
+          git clone https://github.com/patkoch/iac_terraform_azure.git
+      - name: Conduct Terraform init
+        run: |
+          cd iac_terraform_azure/aks/linux/github-actions-demo
+          terraform init -auto-approve
+      - name: Conduct Terraform validate
+        run: |
+            cd iac_terraform_azure/aks/linux/github-actions-demo
+            terraform validate
+      - name: Conduct Terraform apply
+        run: |
+          cd iac_terraform_azure/aks/linux/github-actions-demo
+          terraform destroy -auto-approve  
