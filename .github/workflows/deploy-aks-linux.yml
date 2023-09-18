@@ -1,5 +1,4 @@
-on:
-  workflow_dispatch:
+on: push
 
 name: ProvisionKubernetesClusterOnAzure
 
@@ -41,7 +40,8 @@ jobs:
       - name: Conduct Terraform init
         run: |
           cd iac_terraform_azure/aks/linux/github-actions-demo
-          terraform init -auto-approve
+          ls -l
+          terraform init
       - name: Conduct Terraform validate
         run: |
             cd iac_terraform_azure/aks/linux/github-actions-demo
