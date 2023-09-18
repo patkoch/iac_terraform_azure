@@ -45,6 +45,7 @@ jobs:
         run: |
           cd iac_terraform_azure/aks/linux/github-actions-demo
           ls -l
+          az login --service-principal -u ${{ secrets.CLIENT_ID }} -p ${{ secrets.CLIENT_SECRET }} --tenant ${{ secrets.TENANT_ID }}
           terraform init
       - name: Conduct Terraform validate
         run: |
