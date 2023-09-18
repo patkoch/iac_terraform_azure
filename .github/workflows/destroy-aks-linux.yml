@@ -38,6 +38,9 @@ jobs:
       - name: Clone the repository
         run: |
           git clone https://github.com/patkoch/iac_terraform_azure.git
+      - name: Login with Service Principal
+        run: |
+          az login --service-principal -u ${{ secrets.CLIENT_ID }} -p ${{ secrets.CLIENT_SECRET }} --tenant ${{ secrets.TENANT_ID }}
       - name: Conduct Terraform init
         run: |
           cd iac_terraform_azure/aks/linux/github-actions-demo
