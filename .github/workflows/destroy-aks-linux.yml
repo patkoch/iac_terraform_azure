@@ -41,6 +41,7 @@ jobs:
       - name: Conduct Terraform init
         run: |
           cd iac_terraform_azure/aks/linux/github-actions-demo
+          ls -l
           terraform init
       - name: Conduct Terraform validate
         run: |
