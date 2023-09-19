@@ -4,7 +4,7 @@ on:
 name: DestroyKubernetesClusterOnAzure
 
 jobs:
-  deploy-kubernetes-cluster:
+  destroy-kubernetes-cluster:
     runs-on: ubuntu-latest
     steps:
       - name: Install az
@@ -53,7 +53,7 @@ jobs:
         run: |
             cd iac_terraform_azure/aks/linux/github-actions-demo
             terraform validate
-      - name: Conduct Terraform apply
+      - name: Conduct Terraform destroy
         run: |
           cd iac_terraform_azure/aks/linux/github-actions-demo
           export ARM_CLIENT_ID=${{ secrets.CLIENT_ID }}
