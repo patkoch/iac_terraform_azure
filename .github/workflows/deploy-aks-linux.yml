@@ -55,4 +55,8 @@ jobs:
       - name: Conduct Terraform apply
         run: |
           cd iac_terraform_azure/aks/linux/github-actions-demo
+          export ARM_CLIENT_ID=${{ secrets.CLIENT_ID }}
+          export ARM_CLIENT_SECRET=${{ secrets.CLIENT_SECRET }}
+          export ARM_TENANT_ID=${{ secrets.TENANT_ID }}
+          export ARM_SUBSCRIPTION_ID=${{ secrets.AZURE_SUBSCRIPTION_ID_AZUREWORKSHOP }}
           terraform apply -auto-approve  
