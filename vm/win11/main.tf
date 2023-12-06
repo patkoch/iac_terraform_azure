@@ -50,7 +50,7 @@ resource "azurerm_network_interface" "mynetworkinterface" {
 
 # Windows 11 Virtual Machine
 resource "azurerm_windows_virtual_machine" "myvirtualmachine" {
-  name                = "windows11-21h2"
+  name                = var.my_virtual_machine_name
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   size                = var.my_virtual_machine_size

@@ -14,7 +14,7 @@ terraform {
   # Delete the backend block if you want to store the state locally
   backend "azurerm" {
     resource_group_name  = "devopsexperiences-storage"
-    storage_account_name = "alien39"
+    storage_account_name = "devopsexp2024"
     container_name       = "terraformstate"
     key                  = "terraform.tfstate"
   }
