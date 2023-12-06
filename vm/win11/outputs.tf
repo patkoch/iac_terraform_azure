@@ -14,11 +14,6 @@ output "my_resource_group_location" {
 }
 
 # create an output for the virtual machine public IP address
-#output "my_virtual_machine_public_ip" {
-#  value = azurerm_public_ip.my-public-ip.ip_address
-#}
-
-# create an output for the virtual machine public IP address
 output "my_virtual_machine_public_ip" {
   value = azurerm_windows_virtual_machine.myvirtualmachine.public_ip_address
 }
