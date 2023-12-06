@@ -27,7 +27,7 @@ func TestDeploymentVirtualMachine(t *testing.T) {
 	// Run "terraform init" and "terraform apply". Fail the test if there are any errors.
 	terraform.InitAndApply(t, terraformOptions)
 
-	// Run several tests to get the values of output variables and check they have the expected values.
+	// Run several teststo get the values of output variables and check they have the expected values.
 	realVirtualMachineName := terraform.Output(t, terraformOptions, "my_virtual_machine_name")
 	assert.Equal(t, "windows11-21h2", realVirtualMachineName)
 
