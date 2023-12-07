@@ -159,11 +159,19 @@ To conduct the test, change into the "test" directory and run following command:
  go test -v -run TestDeploymentVirtualMachine
 ```
 
+After executing the command, the test "TestDeploymentVirtualMachine" starts. The resources will be provisioned and destroyed as partr of the test:
+
 ![alt text](pictures/11_terratest_start_test.png)
+
+During that, it can be observed which resources are going to be provisioned:
 
 ![alt text](pictures/12_terratest_provisioning.png)
 
+The four mentioned values, which will be verified by the test, are defined as outputs (see outputs.tf):
+
 ![alt text](pictures/13_terratest_apply_complete.png)
+
+The test result will be shown after the destruction: the test passed:
 
 ![alt text](pictures/14_terratest_destroy_ressources.png)
 
