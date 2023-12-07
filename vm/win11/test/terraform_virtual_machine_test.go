@@ -8,39 +8,37 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// Function for verifying an ip address - source: GitHubCopilot
 func isValidIP(ip string) bool {
 	parsedIP := net.ParseIP(ip)
 	return parsedIP != nil
 }
 
 func TestDeploymentVirtualMachine(t *testing.T) {
-	// Construct the terraform options with default retryable errors to handle the most common
-	// retryable errors in terraform testing.
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		// Set the path to the Terraform code that will be tested.
+		// The TerraformDir variable points the location of the Terraform configuration which shall be tested
 		TerraformDir: "../",
 	})
 
-	// Clean up resources with "terraform destroy" at the end of the test.
+	// Conduct the destruction at the end of the test
 	defer terraform.Destroy(t, terraformOptions)
 
-	// Run "terraform init" and "terraform apply". Fail the test if there are any errors.
+	// Conduct the "init" and "apply" commands and stop in case of any errors
 	terraform.InitAndApply(t, terraformOptions)
 
-	// Run several tests t get the values of output variables and check they have the expected values.
+	// Verification of the virtual machine name
 	realVirtualMachineName := terraform.Output(t, terraformOptions, "my_virtual_machine_name")
 	assert.Equal(t, "windows11-21h2", realVirtualMachineName)
 
+	// Verification of the resource group name
 	realResourceGroupName := terraform.Output(t, terraformOptions, "my_resource_group_name")
 	assert.Equal(t, "iac-azure-terraform", realResourceGroupName)
 
+	//Verification of the resource group location
 	realResourceGroupLocation := terraform.Output(t, terraformOptions, "my_resource_group_location")
 	assert.Equal(t, "westeurope", realResourceGroupLocation)
 
+	// Verification of the public ip address
 	realVirtualMachineIP := terraform.Output(t, terraformOptions, "my_virtual_machine_public_ip")
 	assert.True(t, isValidIP(realVirtualMachineIP))
 }
-
-// https://terratest.gruntwork.io/docs/getting-started/quick-start/
-// https://github.com/gruntwork-io/terratest/tree/master/examples/terraform-hello-world-example
-// https://terratest.gruntwork.io/docs/getting-started/quick-start/

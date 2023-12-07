@@ -46,15 +46,15 @@ This configuration stores the Terraform state file in Azure - defined in the fil
 ``` terraform
   backend "azurerm" {
     resource_group_name  = "devopsexperiences-storage"
-    storage_account_name = "alien39"
+    storage_account_name = "devopsexp2024"
     container_name       = "terraformstate"
     key                  = "terraform.tfstate"
   }
 ```
 
-This refers to a Storage Account (named "alien39"), including a Container that finally contains the Terraform state file.
+This refers to a Storage Account (named "devopsexp2024"), including a Container that manages the Terraform state file.
 
-![alt text](pictures/09_storage_account.png)
+![alt text](pictures/00_storage_account_new.png)
 
 This means, that the Storage Account is mandatory for this configuration.
 
@@ -147,19 +147,19 @@ Confirm it, by typing "yes", to remove all created resources:
 
 # 6. Run a Test using Terratest 
 
-I've added a simple test, using *Terratest*, which verifies:
+I've created a simple test using the *Terratest* framework, for verifying:
  * the resource group location
  * the resource group name
  * the name of the virtual machine
  * the public ip address
 
-To conduct the test, change into the "test" directory and run following command:
+To conduct the test, start a terminal and change the directory into the "test". After that run following command:
 
 ``` powershell
  go test -v -run TestDeploymentVirtualMachine
 ```
 
-After executing the command, the test "TestDeploymentVirtualMachine" starts. The resources will be provisioned and destroyed as partr of the test:
+After executing that command, the test "TestDeploymentVirtualMachine" starts. The resources will be provisioned and destroyed as part of the test, including the validation of the mentioned values.
 
 ![alt text](pictures/11_terratest_start_test.png)
 
@@ -171,12 +171,15 @@ The four mentioned values, which will be verified by the test, are defined as ou
 
 ![alt text](pictures/13_terratest_apply_complete.png)
 
-The test result will be shown after the destruction: the test passed:
+The test result will be shown after the destruction. The test passed as can be seen below:
 
 ![alt text](pictures/14_terratest_destroy_ressources.png)
 
-
+So this test allows to provision the virtual machine, to validate four values which were defined as outputs, and to destroy it again.
 
 # References
 
 [HashiCorp: Tutorials - Get Started - Azure](https://developer.hashicorp.com/terraform/tutorials/azure-get-started)
+[Terratest.Gruntwork.io](https://terratest.gruntwork.io/)
+[Terratest.Gruntwork.io - quick-start](https://terratest.gruntwork.io/docs/getting-started/quick-start/)
+[Github.com - Gruntwork - Terratest](https://github.com/gruntwork-io/terratest/tree/master/examples/terraform-hello-world-example)
