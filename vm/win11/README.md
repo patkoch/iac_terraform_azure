@@ -180,6 +180,9 @@ So this test allows to provision the virtual machine, to validate four values wh
 # References
 
 [HashiCorp: Tutorials - Get Started - Azure](https://developer.hashicorp.com/terraform/tutorials/azure-get-started)
+
 [Terratest.Gruntwork.io](https://terratest.gruntwork.io/)
+
 [Terratest.Gruntwork.io - quick-start](https://terratest.gruntwork.io/docs/getting-started/quick-start/)
+
 [Github.com - Gruntwork - Terratest](https://github.com/gruntwork-io/terratest/tree/master/examples/terraform-hello-world-example)
