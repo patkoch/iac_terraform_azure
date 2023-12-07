@@ -145,6 +145,30 @@ Confirm it, by typing "yes", to remove all created resources:
 
 ![alt text](pictures/10_terraform_destroy_confirm.png)
 
+# 6. Run a Test using Terratest 
+
+I've added a simple test, using *Terratest*, which verifies:
+ * the resource group location
+ * the resource group name
+ * the name of the virtual machine
+ * the public ip address
+
+To conduct the test, change into the "test" directory and run following command:
+
+``` powershell
+ go test -v -run TestDeploymentVirtualMachine
+```
+
+![alt text](pictures/11_terratest_start_test.png)
+
+![alt text](pictures/12_terratest_provisioning.png)
+
+![alt text](pictures/13_terratest_apply_complete.png)
+
+![alt text](pictures/14_terratest_destroy_ressources.png)
+
+
+
 # References
 
 [HashiCorp: Tutorials - Get Started - Azure](https://developer.hashicorp.com/terraform/tutorials/azure-get-started)
