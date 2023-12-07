@@ -23,7 +23,7 @@ func TestDeploymentVirtualMachine(t *testing.T) {
 	// Conduct the destruction at the end of the test
 	defer terraform.Destroy(t, terraformOptions)
 
-	// Conduct the "init" and "apply" commands and stop in case of any errors
+	// Conduct the "init" and "apply" commands and fail in case of any errors
 	terraform.InitAndApply(t, terraformOptions)
 
 	// Verification of the virtual machine name
