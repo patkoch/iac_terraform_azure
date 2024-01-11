@@ -1,0 +1,6 @@
+{
+  "name": "Terraform",
+  "dockerFile": "Dockerfile",
+  "forwardPorts": [],
+  "postCreateCommand": "terraform init"
+}
